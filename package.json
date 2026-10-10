@@ -1,0 +1,32 @@
+{
+  "name": "cse341-final-project",
+  "version": "1.0.0",
+  "description": "Our API Project",
+  "homepage": "https://github.com/schoolonlyaccount/cse341-final-project#readme",
+  "bugs": {
+    "url": "https://github.com/schoolonlyaccount/cse341-final-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schoolonlyaccount/cse341-final-project.git"
+  },
+  "author": "Kell Brine",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "mongodb": "^7.7.0",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "validatorjs": "^3.22.1"
+  }
+}
