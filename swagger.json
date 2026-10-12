@@ -5,10 +5,10 @@
     "description": "A RESTful API for managing information about animals and pets.",
     "version": "1.0.0"
   },
-  "host": "cse341-final-project-dqgm.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/terrestrial-animals/": {
@@ -17,7 +17,7 @@
           "Terrestrial Animals"
         ],
         "summary": "Retrieve a list of all terrestrial animals.",
-        "description": "",
+        "description": "Retrieves a list of all the data in the collection of Terrestrial Animals.",
         "responses": {
           "200": {
             "description": "OK"
@@ -32,21 +32,14 @@
           "Terrestrial Animals"
         ],
         "summary": "Create a new terrestrial animal.",
-        "description": "",
+        "description": "Creates a new terrestrial animal using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Terrestrial Animal"
             }
           }
         ],
@@ -72,7 +65,7 @@
           "Terrestrial Animals"
         ],
         "summary": "Retrieve a specific terrestrial animal by ID.",
-        "description": "",
+        "description": "Retrieves the data for the terrestrial animal with the specified ID in the collection of Terrestrial Animals.",
         "produces": [
           "application/json"
         ],
@@ -101,7 +94,7 @@
           "Terrestrial Animals"
         ],
         "summary": "Update an existing terrestrial animal by ID.",
-        "description": "",
+        "description": "Updates an existing terrestrial animal using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -112,16 +105,9 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Terrestrial Animal"
             }
           }
         ],
@@ -148,7 +134,7 @@
           "Terrestrial Animals"
         ],
         "summary": "Delete a specific terrestrial animal by ID.",
-        "description": "",
+        "description": "Deletes the terrestrial animal with the specified ID from the collection of Terrestrial Animals. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -182,7 +168,7 @@
           "Aquatic Animals"
         ],
         "summary": "Retrieve a list of all aquatic animals.",
-        "description": "",
+        "description": "Retrieves a list of all the data in the collection of Aquatic Animals.",
         "responses": {
           "200": {
             "description": "OK"
@@ -197,21 +183,14 @@
           "Aquatic Animals"
         ],
         "summary": "Create a new aquatic animal.",
-        "description": "",
+        "description": "Creates a new aquatic animal using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Aquatic Animal"
             }
           }
         ],
@@ -237,7 +216,7 @@
           "Aquatic Animals"
         ],
         "summary": "Retrieve a specific aquatic animal by ID.",
-        "description": "",
+        "description": "Retrieves the data for the aquatic animal with the specified ID in the collection of Aquatic Animals.",
         "produces": [
           "application/json"
         ],
@@ -266,7 +245,7 @@
           "Aquatic Animals"
         ],
         "summary": "Update an existing aquatic animal by ID.",
-        "description": "",
+        "description": "Updates an existing aquatic animal using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -277,16 +256,9 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Aquatic Animal"
             }
           }
         ],
@@ -313,7 +285,7 @@
           "Aquatic Animals"
         ],
         "summary": "Delete a specific aquatic animal by ID.",
-        "description": "",
+        "description": "Deletes the aquatic animal with the specified ID from the collection of Aquatic Animals. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -347,7 +319,7 @@
           "Semi-Aquatic Animals"
         ],
         "summary": "Retrieve a list of all semi-aquatic animals.",
-        "description": "",
+        "description": "Retrieves a list of all the data in the collection of Semi-Aquatic Animals.",
         "responses": {
           "200": {
             "description": "OK"
@@ -362,21 +334,14 @@
           "Semi-Aquatic Animals"
         ],
         "summary": "Create a new semi-aquatic animal.",
-        "description": "",
+        "description": "Creates a new semi-aquatic animal using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Semi-Aquatic Animal"
             }
           }
         ],
@@ -402,7 +367,7 @@
           "Semi-Aquatic Animals"
         ],
         "summary": "Retrieve a specific semi-aquatic animal by ID.",
-        "description": "",
+        "description": "Retrieves the data for the semi-aquatic animal with the specified ID in the collection of Semi-Aquatic Animals.",
         "produces": [
           "application/json"
         ],
@@ -431,7 +396,7 @@
           "Semi-Aquatic Animals"
         ],
         "summary": "Update an existing semi-aquatic animal by ID.",
-        "description": "",
+        "description": "Updates an existing semi-aquatic animal using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -442,16 +407,9 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Semi-Aquatic Animal"
             }
           }
         ],
@@ -478,7 +436,7 @@
           "Semi-Aquatic Animals"
         ],
         "summary": "Delete a specific semi-aquatic animal by ID.",
-        "description": "",
+        "description": "Deletes the semi-aquatic animal with the specified ID from the collection of Semi-Aquatic Animals. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -512,7 +470,7 @@
           "Our Pets"
         ],
         "summary": "Retrieve a list of all our pets.",
-        "description": "",
+        "description": "Retrieves a list of all the data in the collection of Our Pets.",
         "responses": {
           "200": {
             "description": "OK"
@@ -527,36 +485,14 @@
           "Our Pets"
         ],
         "summary": "Create a new pet.",
-        "description": "",
+        "description": "Creates a new pet using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "animal_name": {
-                  "example": "any"
-                },
-                "given_name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                },
-                "age": {
-                  "example": "2 years"
-                },
-                "gender": {
-                  "example": "Male / Female"
-                },
-                "health_status": {
-                  "example": "Healthy / Sick / Recovering"
-                },
-                "owner": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Pet"
             }
           }
         ],
@@ -582,7 +518,7 @@
           "Our Pets"
         ],
         "summary": "Retrieve a specific pet by ID.",
-        "description": "",
+        "description": "Retrieves the data for the pet with the specified ID in the collection of Our Pets.",
         "produces": [
           "application/json"
         ],
@@ -611,7 +547,7 @@
           "Our Pets"
         ],
         "summary": "Update an existing pet by ID.",
-        "description": "",
+        "description": "Updates an existing pet using the supplied data. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -622,31 +558,9 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
-              "type": "object",
-              "properties": {
-                "animal_name": {
-                  "example": "any"
-                },
-                "given_name": {
-                  "example": "any"
-                },
-                "species": {
-                  "example": "any"
-                },
-                "age": {
-                  "example": "2 years"
-                },
-                "gender": {
-                  "example": "Male / Female"
-                },
-                "health_status": {
-                  "example": "Healthy / Sick / Recovering"
-                },
-                "owner": {
-                  "example": "any"
-                }
-              }
+              "$ref": "#/definitions/Pet"
             }
           }
         ],
@@ -673,7 +587,7 @@
           "Our Pets"
         ],
         "summary": "Delete a specific pet by ID.",
-        "description": "",
+        "description": "Deletes the pet with the specified ID from the collection of Our Pets. Requires an authenticated session.",
         "parameters": [
           {
             "name": "id",
@@ -698,6 +612,103 @@
           "500": {
             "description": "Internal Server Error"
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Terrestrial Animal": {
+      "type": "object",
+      "required": [
+        "name",
+        "species"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Lion"
+        },
+        "species": {
+          "type": "string",
+          "example": "Panthera leo"
+        }
+      }
+    },
+    "Aquatic Animal": {
+      "type": "object",
+      "required": [
+        "name",
+        "species"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Dolphin"
+        },
+        "species": {
+          "type": "string",
+          "example": "Delphinus delphis"
+        }
+      }
+    },
+    "Semi-Aquatic Animal": {
+      "type": "object",
+      "required": [
+        "name",
+        "species"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Frog"
+        },
+        "species": {
+          "type": "string",
+          "example": "Rana temporaria"
+        }
+      }
+    },
+    "Pet": {
+      "type": "object",
+      "required": [
+        "animal_name",
+        "given_name",
+        "species",
+        "age",
+        "gender",
+        "health_status",
+        "owner"
+      ],
+      "properties": {
+        "animal_name": {
+          "type": "string",
+          "example": "Lion"
+        },
+        "given_name": {
+          "type": "string",
+          "example": "Simba"
+        },
+        "species": {
+          "type": "string",
+          "example": "Panthera leo"
+        },
+        "age": {
+          "type": "string",
+          "example": "2 years"
+        },
+        "gender": {
+          "type": "string",
+          "example": "Male",
+          "description": "Available options: 'Male' or 'Female'"
+        },
+        "health_status": {
+          "type": "string",
+          "example": "Healthy",
+          "description": "Available options: 'Healthy', 'Sick', or 'Recovering'"
+        },
+        "owner": {
+          "type": "string",
+          "example": "John Doe"
         }
       }
     }
