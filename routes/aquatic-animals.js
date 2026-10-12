@@ -1,9 +1,10 @@
 // Main router for the application
 const router = require('express').Router();
 
-// Import the controller and validation middleware for aquatic animals
+// Import the controller, validation middleware, and authentication middleware for aquatic animals
 const animalController = require('../controllers/animals');
 const validation = require('../middleware/validate');
+const { isAuthenticated } = require('../middleware/authenticate');
 
 // Define the data format rules for aquatic animals
 const DataFormatRule = {
@@ -12,32 +13,36 @@ const DataFormatRule = {
 };
 
 // Routes for managing aquatic animals
+const collectionName = 'aquatic_animals';
 router.get('/',
     //#swagger.tags = ['Aquatic Animals']
     //#swagger.summary = 'Retrieve a list of all aquatic animals.'
-    animalController.getAll('aquatic_animals')
+    animalController.getAll(collectionName)
 );
 router.get('/:id',
     //#swagger.tags = ['Aquatic Animals']
     //#swagger.summary = 'Retrieve a specific aquatic animal by ID.'
-    animalController.getSingle('aquatic_animals')
+    animalController.getSingle(collectionName)
 );
 router.post('/',
     //#swagger.tags = ['Aquatic Animals']
     //#swagger.summary = 'Create a new aquatic animal.'
+    isAuthenticated,
     validation.saveItem(DataFormatRule),
-    animalController.createAnimal('aquatic_animals')
+    animalController.createAnimal(collectionName)
 );
 router.put('/:id',
     //#swagger.tags = ['Aquatic Animals']
     //#swagger.summary = 'Update an existing aquatic animal by ID.'
+    isAuthenticated,
     validation.saveItem(DataFormatRule),
-    animalController.updateAnimal('aquatic_animals')
+    animalController.updateAnimal(collectionName)
 );
 router.delete('/:id',
     //#swagger.tags = ['Aquatic Animals']
     //#swagger.summary = 'Delete a specific aquatic animal by ID.'
-    animalController.deleteAnimal('aquatic_animals')
+    isAuthenticated,
+    animalController.deleteAnimal(collectionName)
 );
 
 // Export the router for use in the main application
